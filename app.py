@@ -28,6 +28,8 @@ def webhook():
 
     # リクエストのボディ取得
     body = request.get_data(as_text=True)
+    print("Received Signature:", signature)
+    print("Received Body:", body)  
 
     try:
         handler.handle(body, signature)
